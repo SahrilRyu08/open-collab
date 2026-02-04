@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/apps/web/dashboard.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/apps/web/edit_profile.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/apps/web/index.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/apps/web/login.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/apps/web/profile.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/apps/web/register.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/apps/web/request_collab.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/apps/web/requests.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/apps/web/respond_request.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/apps/web/upload.php" dialect="GenericSQL" />
+  </component>
+</project>
