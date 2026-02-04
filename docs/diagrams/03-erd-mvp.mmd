@@ -1,0 +1,35 @@
+erDiagram
+  USERS {
+    bigint id PK
+    varchar name
+    varchar email UK
+    varchar password_hash
+    varchar role "ARTIST|MUSICIAN"
+    datetime created_at
+  }
+
+  SONGS {
+    bigint id PK
+    bigint user_id FK
+    varchar title
+    varchar genre
+    varchar visibility "PRIVATE|DEMO|PUBLIC"
+    text lyrics
+    varchar demo_file_name
+    int demo_file_size
+    datetime created_at
+  }
+
+  COLLAB_REQUESTS {
+    bigint id PK
+    bigint created_by_user_id FK
+    varchar needed_role "GUITARIST|VOCALIST|DRUMMER|..."
+    varchar title
+    varchar genre
+    text summary
+    varchar status "OPEN|CLOSED"
+    datetime created_at
+  }
+
+  USERS ||--o{ SONGS : "uploads"
+  USERS ||--o{ COLLAB_REQUESTS : "creates"

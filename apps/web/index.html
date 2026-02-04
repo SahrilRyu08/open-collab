@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenCollab Music — Landing</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <div class="brand-title">OpenCollab Music</div>
+          <div class="brand-sub">MVP prototype — HTML/CSS/JS</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn" href="login.html">Login</a>
+        <a class="btn" href="register.html">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Temukan partner kolaborasi musik, tanpa ribet.</h1>
+        <p class="muted">
+          Artist bisa posting kebutuhan kolaborasi, Musician bisa cari project yang cocok.
+          Versi ini fokus untuk presentasi: UI + flow dasar.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="register.html">Mulai Sekarang</a>
+          <a class="btn" href="login.html">Masuk</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="panel">
+          <div class="panel-title">Filter Request</div>
+          <form id="filterForm" class="grid-2">
+            <label class="field">
+              <span>Keyword</span>
+              <input name="q" placeholder="mis. gitaris, pop, ballad" />
+            </label>
+            <label class="field">
+              <span>Role Dibutuhkan</span>
+              <select name="role">
+                <option value="">Semua</option>
+                <option>GUITARIST</option>
+                <option>VOCALIST</option>
+                <option>DRUMMER</option>
+                <option>BASSIST</option>
+                <option>KEYBOARDIST</option>
+                <option>PRODUCER</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Genre</span>
+              <input name="genre" placeholder="mis. Ballad" />
+            </label>
+            <div class="field" style="align-self:end">
+              <button class="btn" type="submit">Terapkan Filter</button>
+            </div>
+          </form>
+          <div class="small muted" style="margin-top:10px">Data masih mock (localStorage).</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Request Kolaborasi (OPEN)</h2>
+        <div class="muted" id="resultCount">—</div>
+      </div>
+
+      <div id="requests" class="cards"></div>
+
+      <div class="footer-space"></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">
+    <div class="title" id="toastTitle">Info</div>
+    <div id="toastMsg" class="small">—</div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+  <script>
+    window.OCM.seedDBIfNeeded();
+    window.OCM.initIndex();
+  </script>
+</body>
+</html>

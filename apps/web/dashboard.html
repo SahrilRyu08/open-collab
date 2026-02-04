@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard — OpenCollab Music</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <div class="brand-title">OpenCollab Music</div>
+          <div class="brand-sub">Dashboard</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="btn" href="index.html">Landing</a>
+        <a class="btn" href="upload.html">Upload Demo</a>
+        <button class="btn" id="logoutBtn">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <h1 class="h1">Welcome, <span id="userName">—</span></h1>
+          <p class="muted" id="userMeta">—</p>
+        </div>
+        <div class="pill" id="rolePill">ROLE</div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-num" id="statSongs">0</div>
+          <div class="stat-label">Songs (demo metadata)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" id="statOpen">0</div>
+          <div class="stat-label">Collab Requests OPEN</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" id="statClosed">0</div>
+          <div class="stat-label">Collab Requests CLOSED</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <h2 class="h2">My Songs</h2>
+          <div class="cards" id="mySongs"></div>
+        </div>
+        <div>
+          <h2 class="h2">My Collab Requests</h2>
+          <div class="cards" id="myRequests"></div>
+        </div>
+      </div>
+
+      <div class="footer-space"></div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">
+    <div class="title" id="toastTitle">Info</div>
+    <div id="toastMsg" class="small">—</div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+  <script>
+    window.OCM.seedDBIfNeeded();
+    window.OCM.initDashboard();
+  </script>
+</body>
+</html>

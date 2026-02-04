@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — OpenCollab Music</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <div class="brand-title">OpenCollab Music</div>
+          <div class="brand-sub">Prototype (HTML/CSS/JS)</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn" href="register.html">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel form-panel">
+      <h1 class="h">Login</h1>
+      <p class="muted">Gunakan akun demo atau buat akun baru.</p>
+
+      <form id="loginForm" class="form">
+        <label>
+          <span>Email</span>
+          <input name="email" type="email" placeholder="nama@email.com" required />
+        </label>
+        <label>
+          <span>Password</span>
+          <input name="password" type="password" placeholder="••••••••" required />
+        </label>
+
+        <div class="row">
+          <button class="btn primary" type="submit">Masuk</button>
+          <a class="btn" href="register.html">Daftar</a>
+        </div>
+      </form>
+
+      <div class="panel-note">
+        <div class="small">
+          <b>Akun Demo</b><br/>
+          Artist: <code>artist@demo.com</code> / <code>Password123!</code><br/>
+          Musician: <code>musician@demo.com</code> / <code>Password123!</code>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">
+    <div class="title" id="toastTitle">Info</div>
+    <div id="toastMsg" class="small">—</div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+  <script>
+    window.OCM.seedDBIfNeeded();
+    window.OCM.initLogin();
+  </script>
+</body>
+</html>

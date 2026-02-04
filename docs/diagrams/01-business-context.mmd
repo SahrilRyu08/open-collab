@@ -1,0 +1,20 @@
+flowchart LR
+  U[User] -->|Browse| W[OpenCollab Music Web]
+
+  subgraph Roles
+    A[Artist]
+    M[Musician]
+  end
+
+  U --> A
+  U --> M
+
+  A -->|Upload demo + buat request kolab| W
+  M -->|Cari request + apply/DM| W
+
+  W -->|Simpan metadata| DB[(Database)]
+
+  %% boundary of MVP
+  subgraph MVP Scope
+    DB
+  end

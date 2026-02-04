@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upload Demo — OpenCollab Music</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <div class="brand-title">OpenCollab Music</div>
+          <div class="brand-sub">Upload demo (prototype)</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="btn" href="index.html">Landing</a>
+        <a class="btn" href="dashboard.html">Dashboard</a>
+        <button class="btn" id="logoutBtn" type="button">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel">
+      <h1 class="h1">Upload Demo</h1>
+      <p class="muted">Versi ini menyimpan metadata saja (nama file & ukuran) agar aman untuk demo tanpa backend.</p>
+
+      <form class="form" id="uploadForm">
+        <div class="row">
+          <div>
+            <label>Judul</label>
+            <input name="title" type="text" placeholder="Contoh: Ikhlas Sendiri" required />
+          </div>
+          <div>
+            <label>Genre</label>
+            <input name="genre" type="text" placeholder="Ballad / Pop Rock" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>Visibility</label>
+            <select name="visibility">
+              <option value="DEMO" selected>DEMO</option>
+              <option value="PRIVATE">PRIVATE</option>
+              <option value="PUBLIC">PUBLIC</option>
+            </select>
+          </div>
+          <div>
+            <label>File demo (.mp3)</label>
+            <input name="demo" type="file" accept="audio/mpeg" />
+            <div class="hint">Nanti versi backend: simpan ke S3/MinIO + anti-leak + rate limit.</div>
+          </div>
+        </div>
+
+        <div>
+          <label>Lirik (optional)</label>
+          <textarea name="lyrics" placeholder="Tulis lirik singkat untuk demo presentasi..."></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" type="submit">Simpan</button>
+          <a class="btn" href="dashboard.html">Batal</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">
+    <div class="title" id="toastTitle">Info</div>
+    <div id="toastMsg" class="small">—</div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+  <script>
+    window.OCM.seedDBIfNeeded();
+    window.OCM.initUpload();
+  </script>
+</body>
+</html>
